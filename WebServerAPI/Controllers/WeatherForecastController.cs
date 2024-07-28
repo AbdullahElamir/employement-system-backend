@@ -13,7 +13,7 @@ namespace WebServerAPI.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, int x)
         {
             _logger = logger;
         }
