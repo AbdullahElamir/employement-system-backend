@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\WorkSpace\\Trainng\\EmploymentSystem\\",
+  "WorkspaceRootPath": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|d:\\projects\\workspace\\trainng\\employmentsystem\\webserverapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|solutionrelative:webserverapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|c:\\users\\malek\\source\\repos\\employement-system-backend\\webserverapi\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|solutionrelative:webserverapi\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|d:\\projects\\workspace\\trainng\\employmentsystem\\webserverapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|c:\\users\\malek\\source\\repos\\employement-system-backend\\webserverapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|solutionrelative:webserverapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|c:\\users\\malek\\source\\repos\\employement-system-backend\\webserverapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C97CA54-BE1A-4500-B09E-AD267447AB80}|WebServerAPI\\WebServerAPI.csproj|solutionrelative:webserverapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,10 +27,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "JobController.cs",
+              "DocumentMoniker": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\WebServerAPI\\Controllers\\JobController.cs",
+              "RelativeDocumentMoniker": "WebServerAPI\\Controllers\\JobController.cs",
+              "ToolTip": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\WebServerAPI\\Controllers\\JobController.cs",
+              "RelativeToolTip": "WebServerAPI\\Controllers\\JobController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T00:18:45.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "D:\\Projects\\WorkSpace\\Trainng\\EmploymentSystem\\WebServerAPI\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\WebServerAPI\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "WebServerAPI\\Controllers\\LoginController.cs",
-              "ToolTip": "D:\\Projects\\WorkSpace\\Trainng\\EmploymentSystem\\WebServerAPI\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\WebServerAPI\\Controllers\\LoginController.cs",
               "RelativeToolTip": "WebServerAPI\\Controllers\\LoginController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -37,13 +54,18 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "D:\\Projects\\WorkSpace\\Trainng\\EmploymentSystem\\WebServerAPI\\Controllers\\WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\WebServerAPI\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "WebServerAPI\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "D:\\Projects\\WorkSpace\\Trainng\\EmploymentSystem\\WebServerAPI\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\MALEK\\source\\repos\\employement-system-backend\\WebServerAPI\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "WebServerAPI\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T10:26:30.662Z"
+              "WhenOpened": "2024-07-28T10:26:30.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
