@@ -1,0 +1,7 @@
+FAQs
+
+Q: What is the main goal of this employee system?
+A: To enhance employee data management and streamline HR processes.
+
+Q: How do I report system issues?
+A: Use the issue tracker on the project's GitHub page.
