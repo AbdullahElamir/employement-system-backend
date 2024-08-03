@@ -1,0 +1,5 @@
+Key Features
+
+-Employee Records Management
+-Attendance Tracking
+-Perfotmance Reporting
