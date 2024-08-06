@@ -1,0 +1,3 @@
+Employee System Overview 
+ 
+This project streamlines employee management, providing tools for efficient data handling and reporting. 
