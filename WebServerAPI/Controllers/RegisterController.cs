@@ -6,10 +6,5 @@ namespace YourNamespace.Controllers
     [Route("[controller]")]
     public class RegisterController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
-        {
-            return "Register Controller Test";
-        }
     }
 }

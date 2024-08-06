@@ -6,9 +6,5 @@ namespace WebServerAPI.Controllers
     [Route("[controller]")]
     public class JobController : Controller
     {
-        public String get()
-        {
-            return "Job Controller Test";
-        }
     }
 }

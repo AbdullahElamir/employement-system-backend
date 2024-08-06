@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using WebServerAPI.DTOs;
+using WebServerAPI.Services;
 
 namespace YourNamespace.Controllers
 {
@@ -6,10 +8,60 @@ namespace YourNamespace.Controllers
     [Route("[controller]")]
     public class EmployeeController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private readonly IEmployeeService _employeeService;
+
+        public EmployeeController(IEmployeeService employeeService)
         {
-            return "Employee Controller Test";
+            _employeeService = employeeService;
+        }
+
+        [HttpGet("GetEmployee")]
+        public IActionResult Get()
+        {
+            var employees = _employeeService.GetAllEmployees();
+            return Ok(employees);
+        }
+
+        [HttpGet("GetEmployee/{id}")]
+        public IActionResult GetEmployee(int id)
+        {
+            var employee = _employeeService.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound("Employee not found");
+            }
+            return Ok(employee);
+        }
+
+        [HttpGet("GetEmployeeByQuery")]
+        public IActionResult GetEmployeeByQuery([FromQuery] string? fullName, string? email)
+        {
+            List<EmployeeDto> employees = new List<EmployeeDto>();
+
+            employees = _employeeService.GetAllEmployees();
+
+            if (!string.IsNullOrEmpty(fullName))
+            {
+                employees = _employeeService.GetEmployeesByName(fullName);
+            }
+            else if (!string.IsNullOrEmpty(email))
+            {
+                employees = _employeeService.GetEmployeesByEmail(email);
+            } 
+
+            return Ok(employees);
+        }
+
+        [HttpPost("AddEmployee")]
+        public IActionResult Post([FromBody] EmployeePostDto employee)
+        {
+            if (string.IsNullOrEmpty(employee.FullName) || string.IsNullOrEmpty(employee.Email))
+            {
+                return BadRequest("Employee name and email are required");
+            }
+
+            _employeeService.AddEmployee(employee);
+            return Ok("Employee added successfully");
         }
     }
 }
