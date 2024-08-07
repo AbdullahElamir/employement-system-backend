@@ -1,56 +1,103 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using WebServerAPI.Data;
 using WebServerAPI.DTOs;
+using WebServerAPI.Models;
 
 namespace WebServerAPI.Services
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly List<EmployeeDto> _employees;
+        private readonly ApplicationDbContext _context;
 
-        public EmployeeService()
+        public EmployeeService(ApplicationDbContext context)
         {
-            // Initialize with some sample data
-            _employees = new List<EmployeeDto>
-            {
-                new EmployeeDto { EmployeeId = 1, FullName = "John Doe", Email = "john.doe@gmail.com" },
-                new EmployeeDto { EmployeeId = 2, FullName = "Jane Smith", Email = "jane.smith@gmail.com" },
-                new EmployeeDto { EmployeeId = 3, FullName = "Michael Brown", Email = "michael.brown@gmail.com" },
-                new EmployeeDto { EmployeeId = 4, FullName = "Emily Johnson", Email = "emily.johnson@gmail.com" },
-                new EmployeeDto { EmployeeId = 5, FullName = "David Wilson", Email = "david.wilson@gmail.com" }
-            };
+            _context = context;
         }
 
         public List<EmployeeDto> GetAllEmployees()
         {
-            return _employees;
+            return _context.Employees
+                .Select(e => new EmployeeDto{
+                    EmployeeId = e.EmployeeId,
+                    FullName = e.FullName,
+                    Email = e.Email}).ToList();
         }
 
         public EmployeeDto GetEmployeeById(int id)
         {
-            return _employees.SingleOrDefault(e => e.EmployeeId == id);
+            var employee = _context.Employees.Find(id);
+            if (employee == null)
+            {
+                return null; 
+            }
+            else
+            {
+                return new EmployeeDto
+                {
+                    EmployeeId = employee.EmployeeId,
+                    FullName = employee.FullName,
+                    Email = employee.Email
+                };
+            }
+
         }
 
         public List<EmployeeDto> GetEmployeesByName(string name)
         {
-            return _employees.Where(e => e.FullName.StartsWith(name)).ToList();
+            return _context.Employees.Where(e => e.FullName.StartsWith(name)).Select(e => new EmployeeDto
+            {
+                EmployeeId = e.EmployeeId,
+                FullName = e.FullName,
+                Email = e.Email
+            }).ToList();
         }
 
         public List<EmployeeDto> GetEmployeesByEmail(string email)
         {
-            return _employees.Where(e => e.Email.StartsWith(email)).ToList();
+            return _context.Employees.Where(e => e.Email.StartsWith(email)).Select(e => new EmployeeDto
+                {
+                    EmployeeId = e.EmployeeId,
+                    FullName = e.FullName,
+                    Email = e.Email
+                }).ToList();
         }
 
-        public void AddEmployee(EmployeePostDto employee)
+        public void AddEmployee(EmployeePostDto employeeDto)
         {
-            var newEmployee = new EmployeeDto
+            var employee = new Employee
             {
-                EmployeeId = (_employees.Count == 0 ? 1 : (_employees.Max(e => e.EmployeeId) + 1)),
-                FullName = employee.FullName,
-                Email = employee.Email
+                FullName = employeeDto.FullName,
+                Email = employeeDto.Email
             };
 
-            _employees.Add(newEmployee);
+            _context.Employees.Add(employee);
+            _context.SaveChanges();
         }
+
+        public void UpdateEmployee(int id, EmployeePostDto employeeDto)
+        {
+            var employee = _context.Employees.Find(id);
+            if (employee != null)
+            {
+                employee.FullName = employeeDto.FullName;
+                employee.Email = employeeDto.Email;
+
+                _context.Employees.Update(employee);
+                _context.SaveChanges();
+            }
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            var employee = _context.Employees.Find(id);
+            if (employee != null)
+            {
+                _context.Employees.Remove(employee);
+                _context.SaveChanges();
+            }
+        }
+
+
     }
 }
