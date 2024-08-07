@@ -63,5 +63,38 @@ namespace YourNamespace.Controllers
             _employeeService.AddEmployee(employee);
             return Ok("Employee added successfully");
         }
+
+        [HttpPut("UpdateEmployee/{id}")]
+        public IActionResult UpdateEmployee(int id, [FromBody] EmployeePostDto Uemployee)
+        {
+            if(string.IsNullOrEmpty(Uemployee.FullName) || string.IsNullOrEmpty(Uemployee.Email))
+            {
+                return BadRequest("Employee name and email are required");
+            }
+
+            var employee = _employeeService.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound("Employee not found");
+            }
+
+            _employeeService.UpdateEmployee(id, Uemployee);
+            return Ok("Employee updated successfully");
+        }
+
+        [HttpDelete("DeleteEmployee/{id}")]
+        public IActionResult DeleteEmployee(int id)
+        {
+            var employee = _employeeService.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound("Employee not found");
+            }
+            else
+            {
+                _employeeService.DeleteEmployee(id);
+                return Ok("Employee deleted successfully");
+            }
+        }
     }
 }

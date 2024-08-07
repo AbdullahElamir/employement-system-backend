@@ -10,5 +10,7 @@ namespace WebServerAPI.Services
         List<EmployeeDto> GetEmployeesByName(string name);
         List<EmployeeDto> GetEmployeesByEmail(string email);
         void AddEmployee(EmployeePostDto employee);
+        void UpdateEmployee(int id, EmployeePostDto Uemployee);
+        void DeleteEmployee(int id);
     }
 }
