@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=CODE-EXPERTS;Database=EmploymentSystem;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Modules -Force

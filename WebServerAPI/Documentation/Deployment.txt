@@ -1,5 +1,0 @@
-Deployment Instructions
-
-- Build the project using the build script.
-- Deploy the application on the server.
-- Verify the deployment by accessing the web interface.

@@ -1,5 +1,0 @@
-Project Goals 
- 
-- Enhance data accuracy and accessibility 
-- Improve reporting capabilities 
-- Simplify user interactions 

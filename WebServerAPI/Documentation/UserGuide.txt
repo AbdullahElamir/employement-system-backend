@@ -1,5 +1,0 @@
-User Guide
-
--Login with your credentials.
--Navigate the dashboard to access features.
--Update your profile settings as needed.
