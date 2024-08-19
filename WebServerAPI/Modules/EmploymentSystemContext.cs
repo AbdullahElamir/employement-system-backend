@@ -29,7 +29,7 @@ public partial class EmploymentSystemContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=CODE-EXPERTS;Database=EmploymentSystem;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False;");
+        => optionsBuilder.UseSqlServer("Server=LAPTOP-NH0OL4FO\\SQLEXPRESS;Database=EmploymentSystem;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
